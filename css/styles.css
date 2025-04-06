@@ -1,0 +1,102 @@
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+  }
+  
+  .background {
+    background: url(../images/fast-food-la-gi-3.jpg) no-repeat center center/cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+  }
+  
+  .form h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  label {
+    text-align: left;
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+  }
+  
+  input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #f6121d;
+  }
+  
+  .links span {
+    font-size: 14px;
+  }
+  
+  .links a {
+    color: #4a90e2;
+    text-decoration: none;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Hide elements */
+  .hidden {
+    display: none;
+  }
+  
+  #user-profile {
+    text-align: center;
+  }
+  
+  #user-profile button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  #user-profile button:hover {
+    background-color: #f6121d;
+  }
+   

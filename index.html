@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fast Food Store</title>
+    <!-- Box Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <!-- Link To CSS -->
+    <link rel="stylesheet" href="./css/home.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <a href="#" class="logo"
+        ><img src="./images/icon.jpg" alt="" />Fast Food Store</a
+      >
+      <div class="bx bx-menu" id="menu-icon"></div>
+
+      <ul class="navbar">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Categories</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#customer">Customer</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Thêm biểu tượng giỏ hàng -->
+      <div class="nav-icons">
+        <div class="cart-icon">
+          <i class="bx bxs-cart"></i>
+          <span id="cart-count">0</span>
+        </div>
+        <div class="user-icon">
+          <a href="./html/login.html">
+            <i class="bx bxs-user-circle"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Home -->
+    <section class="home" id="home">
+      <div class="home-text">
+        <span>Welcome To </span>
+        <h1>Fast Food <br />Store!</h1>
+        <p>
+          Fast Food Store– cửa hàng bán thức ăn nhanh Ngon Số 1 tại thành phố
+          Việt Nam. Nếu đã một lần thưởng thức Hambuger, Pizza,... tại Fast Food
+          Store, bạn sẽ không thể quên được hương vị “ngất ngây” của những món
+          ăn này.
+        </p>
+        <a href="#" class="btn">Buy now</a>
+      </div>
+      <div class="home-img">
+        <img src="./images/o1.jpg" alt="" />
+      </div>
+    </section>
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="about-container" id="categories"></div>
+    </section>
+    <!-- Shop -->
+    <section class="shop" id="shop"></section>
+
+    <section class="customer" id="customer">
+      <div class="heading">
+        <h2>Customer</h2>
+        <p>Những bài đánh giá của khách hàng.</p>
+      </div>
+      <div class="customer-container">
+        <div class="box">
+          <img src="./images/client1.jpg" alt="" />
+          <div class="stars">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+          </div>
+          <p>Đồ ăn rát ngon, đậm vị, không bị dầu mỡ nhiều, đáng ăn thử!</p>
+          <h2>Min</h2>
+        </div>
+
+        <div class="box">
+          <img src="./images/client2.jpg" alt="" />
+          <div class="stars">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+          </div>
+          <p>Đồ ăn ngon, vừa vị, nhân viên tư vấn nhiệt tình.</p>
+          <h2>Ben</h2>
+        </div>
+
+        <div class="box">
+          <img src="./images/singer-Taylor-swift-2013.webp" alt="" />
+          <div class="stars">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+          </div>
+          <p>
+            Chất lượng thức ăn thì khỏi bàn, rất ngon, có mùi thơm đặc trưng.
+          </p>
+          <h2>Taylor Swift</h2>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="heading">
+        <h2>Contact Us</h2>
+        <p>Hãy liên hệ chúng tôi nếu có vấn đề!</p>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h2>Liên hệ ở đây</h2>
+          <p>Nếu thức ăn có vấn đề gì hãy liên hệ với chúng tôi.</p>
+          <div class="adress">
+            <i class="bx bxs-map"><span>Quận 1, Hồ Chí Minh</span></i>
+            <i class="bx bxs-phone"><span>09090909</span></i>
+            <i class="bx bxs-envelope"><span>contact@fastfood.com</span></i>
+          </div>
+          <div class="social">
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="#"><i class="bx bxl-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form>
+            <input type="text" name="name" id="name" placeholder="Name*" />
+            <input type="email" name="email" id="email" placeholder="Email*" />
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="Message*"
+            ></textarea>
+            <input type="submit" value="Submit" id="contact-btn" class="btn" />
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Link To JS -->
+    <script src="./js/nav.js"></script>
+    <script src="./js/contact.js"></script>
+    <script src="./js/add_to_cart.js"></script>
+    <script src="./js/load-api.js"></script>
+  </body>
+</html>

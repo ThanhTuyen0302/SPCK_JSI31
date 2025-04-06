@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In / Sign Up</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="background">
+    <div class="container">
+      <!-- Sign Up Form -->
+      <div id="signup-form" class="form hidden">
+        <h1>Sign Up</h1>
+        <form id="signup">
+          <label for="signup-username">Username</label>
+          <input type="text" id="signup-username" placeholder="Enter your username" required>
+          <label for="signup-email">Email Address</label>
+          <input type="email" id="signup-email" placeholder="Enter your email" required>
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" placeholder="Enter your password" required>
+          <button type="submit">Sign Up</button>
+        </form>
+        <div class="links">
+          <span>Already have an account? <a href="#" onclick="showSignIn()">Sign In now</a></span>
+        </div>
+      </div>
+
+      <!-- Sign In Form -->
+      <div id="signin-form" class="form">
+        <h1>Sign In</h1>
+        <form id="signin">
+          <label for="signin-email">Email Address</label>
+          <input type="email" id="signin-email" placeholder="Enter your email" required>
+          <label for="signin-password">Password</label>
+          <input type="password" id="signin-password" placeholder="Enter your password" required>
+          <button type="submit">Sign In</button>
+        </form>
+        <div class="links">
+          <span>New here? <a href="#" onclick="showSignUp()">Sign Up now</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="user-profile" class="form hidden">
+    <h1>Welcome, <span id="user-name"></span>!</h1>
+    <p><strong>Email:</strong> <span id="user-email"></span></p>
+    <button onclick="signOut()">Sign Out</button>
+  </div>
+  
+  <script src="../js/scripts.js"></script>
+</body>
+</html>
