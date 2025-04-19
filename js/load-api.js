@@ -86,7 +86,7 @@ function loadProducts() {
 loadProducts();
 
 function createProductCard(product_data) {
-    console.log(product_data)
+    // console.log(product_data)
   // create product
   const product_card = document.createElement("div");
   product_card.classList.add("shop-box");
@@ -99,7 +99,10 @@ function createProductCard(product_data) {
   product_name.innerText = product_data.strMeal;
 
   const product_price = document.createElement("h2");
-  product_price.innerText = `${product_data.idMeal} VNĐ`;
+  // Định dạng giá tiền với dấu chấm phân cách hàng nghìn
+  const price = parseInt(product_data.idMeal);
+  const formattedPrice = price.toLocaleString('vi-VN');
+  product_price.innerText = `${formattedPrice} VNĐ`;
 
   const product_add = document.createElement("i");
   product_add.classList.add("bx", "bxs-cart-add");
@@ -152,3 +155,42 @@ function createProductSection(
 
   return main_div;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function updateCartCount() {
+        const cartCount = document.getElementById("cart-count");
+        const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+        cartCount.innerText = totalItems;
+    }
+
+    document.querySelectorAll(".bxs-cart-add").forEach((cartButton) => {
+        console.log(cartButton); // Kiểm tra xem các nút có tồn tại không
+        cartButton.addEventListener("click", () => {
+            console.log("Button clicked"); // Kiểm tra sự kiện click
+            const shopBox = cartButton.closest(".shop-box");
+            const itemName = shopBox.querySelector("h3").innerText;
+            const itemPrice = shopBox.querySelector("h2").innerText;
+            const itemImage = shopBox.querySelector("img").src;
+
+            const existingItem = cart.find((item) => item.name === itemName);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: itemName,
+                    price: itemPrice,
+                    image: itemImage,
+                    quantity: 1,
+                });
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`${itemName} đã được thêm vào giỏ hàng.`);
+            updateCartCount();
+        });
+    });
+
+    updateCartCount();
+});
