@@ -22,24 +22,24 @@
       <div class="bx bx-menu" id="menu-icon"></div>
 
       <ul class="navbar">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">Categories</a></li>
-        <li><a href="#shop">Shop</a></li>
-        <li><a href="#customer">Customer</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a id="nav-home" href="#">Home</a></li>
+        <li><a id="nav-cate" href="#">Categories</a></li>
+        <li><a id="nav-customer" href="#">Customer</a></li>
+        <li><a id="contact" href="#">Contact</a></li>
       </ul>
 
       <!-- Thêm biểu tượng giỏ hàng -->
       <div class="nav-icons">
         <div class="cart-icon">
-          <a href="./html/cart.html">
+          <a id="nav-cart" href="#">
             <i class="bx bxs-cart"></i>
             <span id="cart-count">0</span>
           </a>
         </div>
-        <div class="user-icon">
-          <a href="./html/login.html">
+        <div class="user-icon tooltip">
+          <a id="nav-acc" href="#">
             <i class="bx bxs-user-circle"></i>
+            <span class="tooltiptext tooltip-bottom">Logout</span>
           </a>
         </div>
       </div>
@@ -62,10 +62,12 @@
         <img src="./images/o1.jpg" alt="" />
       </div>
     </section>
+
     <!-- About -->
     <section class="about" id="about">
       <div class="about-container" id="categories"></div>
     </section>
+
     <!-- Shop -->
     <section class="shop" id="shop"></section>
 
@@ -117,6 +119,7 @@
         </div>
       </div>
     </section>
+
     <section class="contact" id="contact">
       <div class="heading">
         <h2>Contact Us</h2>
@@ -140,8 +143,8 @@
 
         <div class="contact-form">
           <form>
-            <input type="text" name="name" id="name" placeholder="Name*" />
-            <input type="email" name="email" id="email" placeholder="Email*" />
+            <input type="text" name="name" id="autofill-name" placeholder="Name*" />
+            <input type="email" name="email" id="autofill-email" placeholder="Email*" />
             <textarea
               name="message"
               id="message"
@@ -156,9 +159,9 @@
     </section>
 
     <!-- Link To JS -->
-    <script src="./js/nav.js"></script>
-    <script src="./js/contact.js"></script>
-    <script src="./js/add_to_cart.js"></script>
-    <script src="./js/load-api.js"></script>
+    <script type="module" src="./js/trangchu/nav.js"></script>
+    <script src="./js/trangchu/contact.js"></script>
+    <script src="./js/trangchu/add_to_cart.js"></script>
+    <script src="./js/trangchu/load-category-api.js"></script>
   </body>
 </html>

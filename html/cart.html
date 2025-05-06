@@ -1,164 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Giỏ Hàng - Fast Food Store</title>
     <!-- Box Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
     <!-- Link To CSS -->
-    <link rel="stylesheet" href="../css/cart.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/cart.css" />
+  </head>
+  <body>
     <!-- Navbar -->
     <header>
-        <a href="../index.html" class="logo">
-            <img src="../images/icon.jpg" alt="">Fast Food Store
-        </a>
-        <div class="bx bx-menu" id="menu-icon"></div>
+      <a href="#" class="logo"
+        ><img src="../images/icon.jpg" alt="" />Fast Food Store</a
+      >
+      <div class="bx bx-menu" id="menu-icon"></div>
 
-        <ul class="navbar">
-            <li><a href="../index.html#home">Home</a></li>
-            <li><a href="../index.html#about">Categories</a></li>
-            <li><a href="../index.html#shop">Shop</a></li>
-            <li><a href="../index.html#customer">Customer</a></li>
-            <li><a href="../index.html#contact">Contact</a></li>
-        </ul>
+      <ul class="navbar">
+        <li><a id="nav-home" href="#">Home</a></li>
+        <li><a id="nav-cate" href="#">Categories</a></li>
+        <li><a id="nav-customer" href="#">Customer</a></li>
+        <li><a id="contact" href="#">Contact</a></li>
+      </ul>
 
-        <!-- Thêm biểu tượng giỏ hàng -->
-        <div class="nav-icons">
-            <div class="cart-icon">
-                <i class="bx bxs-cart"></i>
-                <span id="cart-count">0</span>
-            </div>
-            <div class="user-icon">
-                <a href="./login.html">
-                    <i class="bx bxs-user-circle"></i>
-                </a>
-            </div>
+      <!-- Thêm biểu tượng giỏ hàng -->
+      <div class="nav-icons">
+        <div class="cart-icon">
+          <a id="nav-cart" href="#">
+            <i class="bx bxs-cart"></i>
+            <span id="cart-count">0</span>
+          </a>
         </div>
+        <div class="user-icon tooltip">
+          <a id="nav-acc" href="#">
+            <i class="bx bxs-user-circle"></i>
+            <span class="tooltiptext tooltip-bottom">Logout</span>
+          </a>
+        </div>
+      </div>
     </header>
 
     <!-- Cart Section -->
     <section class="cart-section">
-        <div class="heading">
-            <h2>Giỏ Hàng Của Bạn</h2>
-            <p>Kiểm tra và thanh toán đơn hàng của bạn</p>
+      <div class="heading">
+        <h2>Giỏ Hàng Của Bạn</h2>
+        <p>Kiểm tra và thanh toán đơn hàng của bạn</p>
+      </div>
+
+      <div class="cart-container">
+        <div class="cart-items" id="cart-items">
+          <!-- Cart items will be loaded here dynamically -->
         </div>
 
-        <div class="cart-container">
-            <div class="cart-items" id="cart-items">
-                <!-- Cart items will be loaded here dynamically -->
+        <div class="checkout-form">
+          <h3>Thông tin thanh toán</h3>
+          <form id="payment-form">
+            <!-- Thông tin cá nhân -->
+            <div class="form-group">
+              <h4>Thông tin cá nhân</h4>
+              <div class="input-group">
+                <input
+                  type="text"
+                  id="autofill-name"
+                  required
+                  placeholder="Họ và tên"
+                />
+              </div>
+              <div class="input-group">
+                <input type="email" id="autofill-email" required placeholder="Email" />
+              </div>
+              <div class="input-group">
+                <input
+                  type="tel"
+                  id="phone"
+                  required
+                  placeholder="Số điện thoại"
+                />
+              </div>
             </div>
 
-            <div class="checkout-form">
-                <h3>Thông tin thanh toán</h3>
-                <form id="payment-form">
-                    <!-- Thông tin cá nhân -->
-                    <div class="form-group">
-                        <h4>Thông tin cá nhân</h4>
-                        <div class="input-group">
-                            <input type="text" id="fullname" required placeholder="Họ và tên">
-                        </div>
-                        <div class="input-group">
-                            <input type="email" id="email" required placeholder="Email">
-                        </div>
-                        <div class="input-group">
-                            <input type="tel" id="phone" required placeholder="Số điện thoại">
-                        </div>
-                    </div>
-
-                    <!-- Địa chỉ giao hàng -->
-                    <div class="form-group">
-                        <h4>Địa chỉ giao hàng</h4>
-                        <div class="input-group">
-                            <input type="text" id="address" required placeholder="Địa chỉ">
-                        </div>
-                        <div class="input-group">
-                            <select id="city" required>
-                                <option value="">Chọn tỉnh/thành phố</option>
-                                <option value="hcm">TP. Hồ Chí Minh</option>
-                                <option value="hn">Hà Nội</option>
-                                <option value="dn">Đà Nẵng</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <select id="district" required>
-                                <option value="">Chọn quận/huyện</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Phương thức thanh toán -->
-                    <div class="form-group">
-                        <h4>Phương thức thanh toán</h4>
-                        <div class="payment-methods">
-                            <div class="payment-method">
-                                <input type="radio" id="cod" name="payment" value="cod" checked>
-                                <label for="cod">
-                                    <i class="bx bxs-wallet"></i>
-                                    Thanh toán khi nhận hàng (COD)
-                                </label>
-                            </div>
-                            <div class="payment-method">
-                                <input type="radio" id="bank" name="payment" value="bank">
-                                <label for="bank">
-                                    <i class="bx bxs-bank"></i>
-                                    Chuyển khoản ngân hàng
-                                </label>
-                            </div>
-                            <div class="payment-method">
-                                <input type="radio" id="momo" name="payment" value="momo">
-                                <label for="momo">
-                                    <i class="bx bxs-wallet"></i>
-                                    Ví MoMo
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Ghi chú -->
-                    <div class="form-group">
-                        <h4>Ghi chú</h4>
-                        <div class="input-group">
-                            <textarea id="note" placeholder="Ghi chú về đơn hàng của bạn"></textarea>
-                        </div>
-                    </div>
-
-                    <!-- Order Summary -->
-                    <div class="order-summary">
-                        <h4>Tổng đơn hàng</h4>
-                        <div class="summary-item">
-                            <span>Tạm tính:</span>
-                            <span id="subtotal">0 VNĐ</span>
-                        </div>
-                        <div class="summary-item">
-                            <span>Phí vận chuyển:</span>
-                            <span id="shipping">30,000 VNĐ</span>
-                        </div>
-                        <div class="summary-item total">
-                            <span>Tổng cộng:</span>
-                            <span id="total">0 VNĐ</span>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn">Đặt hàng</button>
-                </form>
+            <!-- Địa chỉ giao hàng -->
+            <div class="form-group">
+              <h4>Địa chỉ giao hàng</h4>
+              <div class="input-group">
+                <input
+                  type="text"
+                  id="address"
+                  required
+                  placeholder="Địa chỉ"
+                />
+              </div>
+              <div class="input-group">
+                <select id="city" required>
+                  <option value="">Chọn tỉnh/thành phố</option>
+                  <option value="hcm">TP. Hồ Chí Minh</option>
+                  <option value="hn">Hà Nội</option>
+                  <option value="dn">Đà Nẵng</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <select id="district" required>
+                  <option value="">Chọn quận/huyện</option>
+                </select>
+              </div>
             </div>
+
+            <!-- Phương thức thanh toán -->
+            <div class="form-group">
+              <h4>Phương thức thanh toán</h4>
+              <div class="payment-methods">
+                <div class="payment-method">
+                  <input
+                    type="radio"
+                    id="cod"
+                    name="payment"
+                    value="cod"
+                    checked
+                  />
+                  <label for="cod">
+                    <i class="bx bxs-wallet"></i>
+                    Thanh toán khi nhận hàng (COD)
+                  </label>
+                </div>
+                <div class="payment-method">
+                  <input type="radio" id="bank" name="payment" value="bank" />
+                  <label for="bank">
+                    <i class="bx bxs-bank"></i>
+                    Chuyển khoản ngân hàng
+                  </label>
+                </div>
+                <div class="payment-method">
+                  <input type="radio" id="momo" name="payment" value="momo" />
+                  <label for="momo">
+                    <i class="bx bxs-wallet"></i>
+                    Ví MoMo
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ghi chú -->
+            <div class="form-group">
+              <h4>Ghi chú</h4>
+              <div class="input-group">
+                <textarea
+                  id="note"
+                  placeholder="Ghi chú về đơn hàng của bạn"
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-summary">
+              <h4>Tổng đơn hàng</h4>
+              <div class="summary-item">
+                <span>Tạm tính:</span>
+                <span id="subtotal">0 VNĐ</span>
+              </div>
+              <div class="summary-item">
+                <span>Phí vận chuyển:</span>
+                <span id="shipping">30,000 VNĐ</span>
+              </div>
+              <div class="summary-item total">
+                <span>Tổng cộng:</span>
+                <span id="total">0 VNĐ</span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn">Đặt hàng</button>
+          </form>
         </div>
+      </div>
     </section>
 
     <!-- Empty Cart Message -->
     <div class="empty-cart" id="empty-cart">
-        <i class="bx bxs-cart"></i>
-        <h2>Giỏ hàng trống</h2>
-        <p>Bạn chưa có sản phẩm nào trong giỏ hàng</p>
-        <a href="../index.html#shop" class="btn">Tiếp tục mua sắm</a>
+      <i class="bx bxs-cart"></i>
+      <h2>Giỏ hàng trống</h2>
+      <p>Bạn chưa có sản phẩm nào trong giỏ hàng</p>
+      <a href="../index.html#shop" class="btn">Tiếp tục mua sắm</a>
     </div>
 
     <!-- Link To JS -->
-    <script src="../js/nav.js"></script>
-    <script src="../js/cart.js"></script>
-    <script src="../js/checkout.js"></script>
-</body>
-</html> 
+    <script type="module" src="../js/trangchu/nav.js"></script>
+    <script type="module" src="../js/giohang/giohang.js"></script>
+    <script type="module" src="../js/giohang/checkout.js"></script>
+  </body>
+</html>

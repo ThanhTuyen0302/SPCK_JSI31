@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fast Food Store</title>
+    <!-- Box Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <!-- Link To CSS -->
+    <link rel="stylesheet" href="../css/home.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <a href="#" class="logo"
+        ><img src="../images/icon.jpg" alt="" />Fast Food Store</a
+      >
+      <div class="bx bx-menu" id="menu-icon"></div>
+
+      <ul class="navbar">
+        <li><a id="nav-home" href="#">Home</a></li>
+        <li><a id="nav-cate" href="#">Categories</a></li>
+        <li><a id="nav-customer" href="#">Customer</a></li>
+        <li><a id="contact" href="#">Contact</a></li>
+      </ul>
+
+      <!-- Thêm biểu tượng giỏ hàng -->
+      <div class="nav-icons">
+        <div class="cart-icon">
+          <a id="nav-cart" href="#">
+            <i class="bx bxs-cart"></i>
+            <span id="cart-count">0</span>
+          </a>
+        </div>
+        <div class="user-icon tooltip">
+          <a id="nav-acc" href="#">
+            <i class="bx bxs-user-circle"></i>
+            <span class="tooltiptext tooltip-bottom">Logout</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Home -->
+    <section class="home" id="home">
+      <div class="home-text">
+        <span>Category </span>
+        <h1 id="category-name">Vegetarian</h1>
+        <p id="category-desc">
+          Pasta is a staple food of traditional Italian cuisine, with the first
+          reference dating to 1154 in Sicily. Also commonly used to refer to the
+          variety of pasta dishes, pasta is typically a noodle made from an
+          unleavened dough of a durum wheat flour mixed with water or eggs and
+          formed into sheets or various shapes, then cooked by boiling or
+          baking. As an alternative for those wanting a different taste, or who
+          need to avoid products containing gluten, some pastas can be made
+          using rice flour in place of wheat.[3][4] Pastas may be divided into
+          two broad categories, dried (pasta secca) and fresh (pasta fresca).
+        </p>
+        <a href="#products" class="btn">Buy now</a>
+      </div>
+      <div class="home-img">
+        <img id="category-img" src="../images/o1.jpg" alt="" />
+      </div>
+    </section>
+
+    <!-- Shop -->
+    <section class="shop" id="shop">
+      <div class="about-container" id="products"></div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="heading">
+        <h2>Contact Us</h2>
+        <p>Hãy liên hệ chúng tôi nếu có vấn đề!</p>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h2>Liên hệ ở đây</h2>
+          <p>Nếu thức ăn có vấn đề gì hãy liên hệ với chúng tôi.</p>
+          <div class="adress">
+            <i class="bx bxs-map"><span>Quận 1, Hồ Chí Minh</span></i>
+            <i class="bx bxs-phone"><span>09090909</span></i>
+            <i class="bx bxs-envelope"><span>contact@fastfood.com</span></i>
+          </div>
+          <div class="social">
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="#"><i class="bx bxl-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form>
+            <input
+              type="text"
+              name="name"
+              id="autofill-name"
+              placeholder="Name*"
+            />
+            <input
+              type="email"
+              name="email"
+              id="autofill-email"
+              placeholder="Email*"
+            />
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="Message*"
+            ></textarea>
+            <input type="submit" value="Submit" id="contact-btn" class="btn" />
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Link To JS -->
+    <script type="module" src="../js/trangchu/nav.js"></script>
+    <script type="module" src="../js/shop/load-product-api.js"></script>
+  </body>
+</html>

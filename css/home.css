@@ -77,6 +77,70 @@ header.active .navbar a {
   z-index: 10001;
   display: none;
 }
+
+/* giỏ hàng */
+.cart-icon,
+.user-icon {
+  position: relative;
+  display: inline-block;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.cart-icon i,
+.user-icon i {
+  font-size: 24px;
+  color: red;
+}
+
+.user-icon i {
+  color: var(--second-color);
+}
+
+.cart-icon #cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity .6s;
+}
+
+.tooltip-bottom {
+  top: 125%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
 .home {
   width: 100%;
   min-height: 100vh;
@@ -84,15 +148,15 @@ header.active .navbar a {
   flex-wrap: wrap;
   align-items: center;
   /* background: url(images/images\\(1\).jpg); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   gap: 1rem;
 }
-.home-text {
+.home-text,
+.home-img {
+  margin-top: 50px;
   flex: 1 1 17rem;
 }
 .home-img {
+  margin-top: 40px;
   flex: 1 1 17rem;
 }
 .home-text span {
@@ -161,6 +225,7 @@ header.active .navbar a {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  cursor: pointer;
 }
 .about-box h3 {
   font-size: 1rem;
@@ -192,6 +257,7 @@ header.active .navbar a {
   gap: 1rem;
   margin-top: 2rem;
 }
+
 .shop-box {
   position: relative;
   flex: 1 1 17rem;
@@ -246,6 +312,7 @@ header.active .navbar a {
   box-shadow: 0px 4px 4px rgb(14 55 54 / 15%);
   padding: 20px;
   border-radius: 0.5rem;
+  height: 300px;
 }
 .box img {
   width: 70px;
@@ -419,36 +486,4 @@ form .btn:hover {
   }
 }
 
-/* giỏ hàng */
-.cart-icon,
-.user-icon {
-  position: relative;
-  display: inline-block;
-  margin-left: 20px;
-  cursor: pointer;
-}
 
-.cart-icon i,
-.user-icon i {
-  font-size: 24px;
-  color: red;
-}
-
-.user-icon i {
-  color: #000;
-}
-
-.cart-icon #cart-count {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background-color: red;
-  color: white;
-  font-size: 12px;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

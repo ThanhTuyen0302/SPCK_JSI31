@@ -22,7 +22,7 @@
           <button type="submit">Sign Up</button>
         </form>
         <div class="links">
-          <span>Already have an account? <a href="#" onclick="showSignIn()">Sign In now</a></span>
+          <span>Already have an account? <a href="#" id="showSignin">Sign In now</a></span>
         </div>
       </div>
 
@@ -37,18 +37,12 @@
           <button type="submit">Sign In</button>
         </form>
         <div class="links">
-          <span>New here? <a href="#" onclick="showSignUp()">Sign Up now</a></span>
+          <span>New here? <a href="#" id="showSignup">Sign Up now</a></span>
         </div>
       </div>
     </div>
   </div>
-
-  <div id="user-profile" class="form hidden">
-    <h1>Welcome, <span id="user-name"></span>!</h1>
-    <p><strong>Email:</strong> <span id="user-email"></span></p>
-    <button onclick="signOut()">Sign Out</button>
-  </div>
   
-  <script src="../js/scripts.js"></script>
+  <script type="module" src="../js/dangnhap/dangnhap.js"></script>
 </body>
 </html>

@@ -15,8 +15,8 @@ function validateContactForm(email, name, message) {
   
   function submitContact() {
     // get data from html
-    const email = document.getElementById("email");
-    const name = document.getElementById("name");
+    const email = document.getElementById("autofill-email");
+    const name = document.getElementById("autofill-name");
     const message = document.getElementById("message");
     // kiem tra du lieu dau vao
     if (
