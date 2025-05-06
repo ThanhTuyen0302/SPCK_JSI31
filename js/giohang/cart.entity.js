@@ -10,7 +10,7 @@ import {
   addDoc,
   updateDoc,
   arrayUnion,
-} from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore-lite.js";
+} from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
 
 ///////////////////////////////////////////////////////
 // CART MODEL & FUNCTIONS

@@ -8,7 +8,7 @@ import {
   query,
   where,
   addDoc,
-} from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore-lite.js";
+} from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
 
 // User constructor (no cart)
 export default function User(email, username) {

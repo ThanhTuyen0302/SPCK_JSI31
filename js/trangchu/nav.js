@@ -53,7 +53,9 @@ export async function updateCartCount() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  await updateCartCount();
+  console.log(currentUser);
+  
+  
 
   // Update nav hrefs dynamically
   Object.entries(navLinks).forEach(([id, href]) => {
@@ -66,11 +68,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   const tooltipText = document.querySelector(".tooltiptext");
 
   if (currentUser) {
+    await updateCartCount();
     // ✅ Logged in
     await autoFillUserInfo();
     if (tooltipText) tooltipText.textContent = "Logout";
 
-    const user = await getUserByEmail(currentUser);
+  
     userIcon.addEventListener("click", (e) => {
       e.preventDefault();
       localStorage.removeItem("currentUser");
